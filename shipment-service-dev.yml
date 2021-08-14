@@ -33,3 +33,6 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
     appname: shipment-service
+
+refresh:
+    value: 1234567
