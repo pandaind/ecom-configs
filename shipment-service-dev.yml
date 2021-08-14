@@ -35,4 +35,4 @@ eureka:
     appname: shipment-service
 
 refresh:
-    value: 1234567
+    value: abcdefg
