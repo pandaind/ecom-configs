@@ -6,7 +6,7 @@ spring:
   h2:
     console:
       enabled: true
-      path: /db
+      path: /data
       settings:
         web-allow-others: true
 
