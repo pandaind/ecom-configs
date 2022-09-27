@@ -22,6 +22,19 @@ spring:
       hibernate:
         generate_statistics: false
         format_sql: true
+  kafka:
+    bootstrap-servers: http://localhost:9092
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      enable-auto-commit: true
+      group-id: ecom-shipment-service
+      auto-offset-reset: earliest
+      properties:
+        backs: all
+        retries: 10
+        retry.backoff.ms: 1000
   boot:
     admin:
       client:
