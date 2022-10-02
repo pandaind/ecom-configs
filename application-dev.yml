@@ -27,6 +27,9 @@ spring:
         acks: all
         retries: 10
         retry.backoff.ms: 1000
+  redis:
+    host: ${REDIS_HOST:localhost}
+    port: ${REDIS_PORT:6379}
 
   boot:
     admin:
