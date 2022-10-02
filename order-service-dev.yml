@@ -1,0 +1,16 @@
+spring:     
+  datasource:
+    url: jdbc:h2:mem:orderdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+        
+  redis:
+    host: localhost
+    port: 6370
+
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+

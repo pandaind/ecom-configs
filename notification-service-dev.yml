@@ -1,1 +1,17 @@
-test: test
+spring:
+  datasource:
+    url: jdbc:h2:mem:notificationdb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      enable-auto-commit: true
+      group-id: ecom-shipment-service
+      auto-offset-reset: earliest
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer

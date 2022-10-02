@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+      - id: order-service
+        uri: lb://ORDER-SERVICE
+        predicates:
+        - Path=/api/orders, /api/orders/**, /api/cart, /api/cart/**
+      - id: product-service
+        uri: lb://PRODUCT-SERVICE
+        predicates:
+        - Path=/api/products, /api/products/**, /api/admin/products, /api/admin/products/**
+      - id: user-service
+        uri: lb://USER-SERVICE
+        predicates:
+        - Path=/api/users, /api/users/**
+      - id: inventory-service
+        uri: lb://INVENTORY-SERVICE
+        predicates:
+        - Path=/api/inventories, /api/inventories/**
+      - id: shipment-service
+        uri: lb://SHIPMENT-SERVICE
+        predicates:
+          - Path=/api/shipments, /api/shipments/**

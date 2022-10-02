@@ -1,59 +1,14 @@
 spring:
-  autoconfigure:
-    exclude:
-      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
-      - org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration
-  h2:
-    console:
-      enabled: true
-      path: /data
-      settings:
-        web-allow-others: true
-
   datasource:
     url: jdbc:h2:mem:shipmentdb
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
-  jpa:
-    show-sql: true
-    properties:
-      hibernate:
-        generate_statistics: false
-        format_sql: true
   kafka:
-    bootstrap-servers: http://localhost:9092
     consumer:
-      bootstrap-servers: localhost:9092
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       enable-auto-commit: true
       group-id: ecom-shipment-service
       auto-offset-reset: earliest
-      properties:
-        backs: all
-        retries: 10
-        retry.backoff.ms: 1000
-  boot:
-    admin:
-      client:
-        url: http://localhost:9090
-  sleuth:
-    integration:
-      enabled: true
-    sampler:
-      probability: 1
-  zipkin:
-    base-url: http://localhost:9411/
-
-eureka:
-  client:
-    service-url:
-      default-zone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-    appname: shipment-service
-
-refresh:
-    value: abcdefg
