@@ -42,15 +42,15 @@ spring:
   zipkin:
     base-url: ${ZIPKIN_URL:http://localhost:9411/}
 
-eureka:
-  client:
-    service-url:
-      default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
-  instance:
-    instance-id: ${spring.application.name}:${random.uuid}
-    appname: ${spring.application.name}
+  eureka:
+    client:
+      service-url:
+        default-zone: ${EUREKA_URL:http://localhost:8761/eureka}
+    instance:
+      instance-id: ${spring.application.name}:${random.uuid}
+      appname: ${spring.application.name}
 
 refresh:
-    value: abcdefg
+  value: abcdefg
 
 debug: ${DEBUG:false}
