@@ -10,7 +10,7 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       enable-auto-commit: true
-      group-id: ecom-shipment-service
+      group-id: ecom-notification-service
       auto-offset-reset: earliest
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
