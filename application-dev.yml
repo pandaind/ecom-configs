@@ -49,6 +49,7 @@ eureka:
   instance:
     instance-id: ${spring.application.name}:${random.uuid}
     appname: ${spring.application.name}
+    preferIpAddress: true
 
 refresh:
     value: abcdefg
